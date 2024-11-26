@@ -1,0 +1,92 @@
+/* .geist-mono {
+    font-family: "Geist Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+} */
+
+:root {
+    /* Base */
+    --darkmodeBlue: #141B23;
+
+    /* Retro Colors */
+    --retroGreen: #3A5C43;
+    --retroRed: #9C4035;
+    --retroYellow: #C88630;
+    --retroBlue: #385D65;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+/* Header */
+
+.index_header {
+    background-color: var(--darkmodeBlue);
+    width: 100%;
+    padding: 12rem;
+    display: flex;
+    justify-content: center;
+}
+
+.index_header h1 {
+    color: whitesmoke;
+    font-family: "Geist Mono", monospace;
+    background-color: inherit;
+    font-size: 72px;
+}
+
+/* Navigation */
+
+.green {
+    background-color: var(--retroGreen);
+}
+
+.red {
+    background-color: var(--retroRed);
+}
+
+.yellow {
+    background-color: var(--retroYellow);
+}
+
+.blue {
+    background-color: var(--retroBlue);
+}
+
+.navColors {
+    flex: 1;
+}
+
+.navLine {
+    display: flex;
+    width: 100%;
+    height: 1.5rem;
+    position: sticky;
+    top: 0;
+}
+
+.caret {
+    color:whitesmoke; 
+    background-color:inherit; 
+    display: flex; 
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+}
+
+.navBtn {
+    flex: 1;
+    font-family: "Geist Mono", monospace;
+    border: none;
+    font-size: 36px;
+    padding: 2rem;
+    color: whitesmoke;
+}
