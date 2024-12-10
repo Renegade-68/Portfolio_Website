@@ -19,27 +19,14 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
-}
-
-/* Header */
-
-.index_header {
     background-color: var(--darkmodeBlue);
-    width: 100%;
-    padding: 12rem;
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
 }
 
-.index_header h1 {
-    color: whitesmoke;
-    font-family: "Geist Mono", monospace;
-    background-color: inherit;
-    font-size: 72px;
+body {
+    margin: 0;
+    padding: 0;
 }
-
-/* Navigation */
 
 .green {
     background-color: var(--retroGreen);
@@ -57,27 +44,35 @@
     background-color: var(--retroBlue);
 }
 
-.navColors {
-    flex: 1;
+/* Header */
+.index_header {
+    background-color: var(--darkmodeBlue);
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.navLine {
-    display: flex;
-    width: 100%;
-    height: 1.5rem;
+.index_header h1 {
+    color: whitesmoke;
+    font-family: "Geist Mono", monospace;
+    background-color: inherit;
+    font-size: 72px;
+}
+
+/* Navigation */
+
+.nav {
+    box-shadow: 0 -5px 10px black, 0 5px 10px black;
+    cursor: pointer;
+    z-index: 10;
+    margin-bottom: 1rem;
     position: sticky;
     top: 0;
 }
 
-.caret {
-    color:whitesmoke; 
-    background-color:inherit; 
-    display: flex; 
-    justify-content: center;
-    padding: 0.5rem;
-}
-
-.nav {
+.navBtns {
     display: flex;
     width: 100%;
 }
@@ -89,4 +84,170 @@
     font-size: 36px;
     padding: 2rem;
     color: whitesmoke;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    position: sticky;
 }
+
+.navColors {
+    flex: 1;
+    position: relative;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navLine {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.caret {
+    color:whitesmoke; 
+    background-color:inherit; 
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+}
+
+/* About Me */
+
+.aboutmeContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--darkmodeBlue);
+    font-family: "Geist Mono", monospace;
+    color: whitesmoke;
+    height: auto;
+    min-height: 40rem;
+    border-bottom: var(--retroGreen) 1rem solid;
+}
+
+.aboutmeTextContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    background-color: inherit;
+}
+
+.aboutmeTextContainer h1 {
+    background-color: inherit;
+    color: var(--retroGreen);
+    margin-left: 5rem;
+    border-left: var(--retroGreen) 0.5rem solid;
+    padding-left: 0.5rem;
+}
+
+.aboutmeTextContainer p {
+    background-color: inherit;
+    margin-left: 5rem;
+    border-left: var(--retroGreen) 0.5rem solid;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.aboutmePhoto {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+}
+
+.aboutmePhoto img {
+    width: 40%;
+    display: block;
+    background-color: inherit;
+    border-bottom: var(--retroGreen) 0.5rem solid;
+}
+
+/* Projects */
+
+.projectsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-family: "Geist Mono", monospace;
+    border-bottom: var(--retroRed) 1rem solid;
+}
+
+.projectTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.projectTextContainer h1 {
+    background-color: inherit;
+    color: var(--retroRed);
+    margin-left: 5rem;
+    border-left: var(--retroRed) 0.5rem solid;
+    padding-left: 0.5rem;
+}
+
+.projectTextContainer p {
+    background-color: inherit;
+    margin-left: 5rem;
+    border-left: var(--retroRed) 0.5rem solid;
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+}
+
+.projectBlockContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectBlock {
+    width: 100%;
+    padding: 3rem;
+    margin: 1.7rem;
+    background-color: var(--retroRed);
+    height: auto;
+    min-height: 30rem;
+    border-radius: 0.25rem;
+}
+
+.projectBlock h2 {
+    background-color: inherit;
+}
+
+.projectBlock h3 {
+    background-color: inherit;
+}
+
+.projectBlock p {
+    background-color: inherit;
+}   
+
+.projectBlock a {
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+}  
+
+.projectBlock a i{
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.projectBlock a:hover {
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bolder;
+}  
+
+
