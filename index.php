@@ -29,7 +29,7 @@ echo "";
 
     <body>
         
-        <div class="container-fluid g-0">
+        <div class="mainContainer">
 
             <!-- This is the header of the mainpage -->
             <div class="index_header">
@@ -39,17 +39,10 @@ echo "";
             <!-- This is the navigation for all pages -->
             <div class="nav">
                 <div class="navBtns">
-                    <a href="#" class="navBtn green">About Me</a>
-                    <a href="#" class="navBtn red">Projects</a>
-                    <a href="#" class="navBtn yellow">Study</a>
-                    <a href="#" class="navBtn blue">Contact Me</a>
-                </div>
-
-                <div class="navLine">
-                    <div class="navColors green"><i class="fa-solid fa-caret-down caret"></i></div>
-                    <div class="navColors red"><i class="fa-solid fa-caret-down caret"></i></div>
-                    <div class="navColors yellow"><i class="fa-solid fa-caret-down caret"></i></div>
-                    <div class="navColors blue"><i class="fa-solid fa-caret-down caret"></i></div>
+                    <a href="#" class="navBtn green">About Me<i class="fa-solid fa-caret-down caret"></i></a>
+                    <a href="#" class="navBtn red">Projects<i class="fa-solid fa-caret-down caret"></i></a>
+                    <a href="#" class="navBtn yellow">Study<i class="fa-solid fa-caret-down caret"></i></a>
+                    <a href="#" class="navBtn blue">Contact Me<i class="fa-solid fa-caret-down caret"></i></a>
                 </div>
             </div>
 
