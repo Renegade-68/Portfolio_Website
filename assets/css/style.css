@@ -1,9 +1,30 @@
-/* .geist-mono {
-    font-family: "Geist Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-} */
+/* 
+    Global styling!
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
 
 :root {
     /* Base */
@@ -16,60 +37,74 @@
     --retroBlue: #385D65;
 }
 
-
-/* Global */
-*{
-    margin: 0;
-    padding: 0;
-    background-color: var(--darkmodeBlue);
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
 .mainContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.green {
-    background-color: var(--retroGreen);
-}
-
-.red {
-    background-color: var(--retroRed);
-}
-
-.yellow {
-    background-color: var(--retroYellow);
-}
-
-.blue {
-    background-color: var(--retroBlue);
+    font-family: "Geist Mono", monospace;
 }
 
 /* Header */
-.index_header {
-    background-color: var(--darkmodeBlue);
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    flex: 1;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire screen */
+    z-index: -1; /* Sends the video behind other content */
+}
+
+.index_header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: calc(100vh - 9rem);
+    text-align: left;
+    z-index: 1;
+    position: relative;
 }
 
 .index_header h1 {
     color: whitesmoke;
     font-family: "Geist Mono", monospace;
-    background-color: inherit;
-    font-size: 72px;
+    font-size: 3rem;
+}
+
+#typing-animation {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-line;
+}
+
+/* Caret styling */
+#typing-caret {
+    display: inline-block;
+    width: 10px;
+    height: 3rem; /* Longer vertically */
+    background-color: white;
+    margin-left: 2px;
+    animation: blink 0.5s step-start infinite;
+}
+
+/* Animation for blinking caret */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Styling for colored text */
+.green-text {
+    color: rgb(12, 75, 12);
+}
+
+.orange-text {
+    color: rgb(218, 175, 96);
+}
+
+.white-text {
+    color: white;
 }
 
 /* Navigation */
@@ -81,6 +116,8 @@ html, body {
     position: sticky;
     top: 0;
     margin-top: auto;
+    height: 9rem;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .navBtns {
@@ -92,7 +129,6 @@ html, body {
     flex: 1;
     font-family: "Geist Mono", monospace;
     border: none;
-    font-size: 36px;
     padding: 2rem;
     color: whitesmoke;
     cursor: pointer;
@@ -105,10 +141,11 @@ html, body {
 
 .navBtns a p {
     background-color: inherit;
+    font-size: 2.5rem;
 }
 
 .navBtns a p i {
-    background-color: inherit;
+    transition: transform 1s ease;
 }
 
 .caret {
@@ -116,6 +153,11 @@ html, body {
     background-color:inherit; 
     font-size: 24px;
     margin-top: 1rem;
+    transition: transform 0.5s ease;
+}
+
+.navBtns a:hover .caret {
+    transform: translateY(10px);
 }
 
 /* About Me */
@@ -130,6 +172,7 @@ html, body {
     height: auto;
     min-height: 40rem;
     border-bottom: var(--retroGreen) 1rem solid;
+    position: relative;
 }
 
 .aboutmeTextContainer {
@@ -147,6 +190,7 @@ html, body {
     margin-left: 5rem;
     border-left: var(--retroGreen) 0.5rem solid;
     padding-left: 0.5rem;
+    font-size: 2.5rem;
 }
 
 .aboutmeTextContainer p {
@@ -179,8 +223,11 @@ html, body {
     justify-content: center;
     align-items: center;
     color: whitesmoke;
+    min-height: 40rem;
     font-family: "Geist Mono", monospace;
     border-bottom: var(--retroRed) 1rem solid;
+    position: relative;
+    background-color: var(--darkmodeBlue);
 }
 
 .projectTextContainer {
@@ -188,15 +235,25 @@ html, body {
     flex-direction: column;
     justify-content: top;
     align-items: left;
-    width: 50%;
+    width: 30%;
 }
 
-.projectTextContainer h1 {
+.projectTextContainer a{
+    text-decoration: none;
+}
+
+.projectTextContainer a h1 {
     background-color: inherit;
     color: var(--retroRed);
     margin-left: 5rem;
     border-left: var(--retroRed) 0.5rem solid;
     padding-left: 0.5rem;
+    font-size: 2.5rem;
+    transition: transform 1s ease;
+}
+
+.projectTextContainer a:hover h1 {
+    transform: translateY(-10px);    
 }
 
 .projectTextContainer p {
@@ -214,7 +271,7 @@ html, body {
     align-items: center;
     margin-bottom: 3rem;
     margin-top: 3rem;
-    width: 50%;
+    width: 70%;
 }
 
 .projectBlock {
@@ -222,9 +279,11 @@ html, body {
     padding: 3rem;
     margin: 1.7rem;
     background-color: var(--retroRed);
+    color: white;
     height: auto;
     min-height: 30rem;
-    border-radius: 0.25rem;
+    max-height: 30rem;
+    border-radius: 0.5rem;
     transition: box-shadow 0.5s ease;
     transition: margin-top 0.5s ease;
 }
@@ -234,24 +293,12 @@ html, body {
     padding: 3rem;
     margin: 1.7rem;
     background-color: var(--retroRed);
-    height: auto;
-    min-height: 30rem;
-    border-radius: 0.25rem;
+    /* height: auto; */
+    /* min-height: 30rem; */
+    border-radius: 0.5rem;
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.9);
     margin-top: 1rem;
 }
-
-.projectBlock h2{
-    background-color: inherit;
-}
-
-.projectBlock h3 {
-    background-color: inherit;
-}
-
-.projectBlock p {
-    background-color: inherit;
-}   
 
 .projectBlock a {
     background-color: inherit;
@@ -265,6 +312,7 @@ html, body {
     background-color: inherit;
     color: whitesmoke;
     text-decoration: none;
+    margin-top: 1rem;
     margin-left: 0px;
 }
 
@@ -282,6 +330,15 @@ html, body {
     text-decoration: none;
 }
 
+.projectBlock img {
+    max-width: 25%;
+
+}
+
+#projectBottom {
+    height: 1px; /* Invisible but functional */
+}
+
 /* Study */
 
 .studyContainer {
@@ -291,6 +348,9 @@ html, body {
     color: whitesmoke;
     font-family: "Geist Mono", monospace;
     border-bottom: var(--retroYellow) 1rem solid;
+    position: relative;
+    min-height: 40rem;
+    background-color: var(--darkmodeBlue);
 }
 
 .studyTextContainer {
@@ -298,15 +358,25 @@ html, body {
     flex-direction: column;
     justify-content: top;
     align-items: left;
-    width: 50%;
+    width: 30%;
 }
 
-.studyTextContainer h1 {
+.studyTextContainer a{
+    text-decoration: none;
+}
+
+.studyTextContainer a h1 {
     background-color: inherit;
     color: var(--retroYellow);
     margin-left: 5rem;
     border-left: var(--retroYellow) 0.5rem solid;
     padding-left: 0.5rem;
+    font-size: 2.5rem;
+    transition: transform 1s ease;
+}
+
+.studyTextContainer a:hover h1 {
+    transform: translateY(-10px);    
 }
 
 .studyTextContainer p {
@@ -319,7 +389,7 @@ html, body {
 }
 
 .studyBlockContainer {
-    width: 50%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -334,7 +404,7 @@ html, body {
     background-color: var(--retroYellow);
     height: auto;
     min-height: 30rem;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     transition: box-shadow 0.5s ease;
     transition: margin-top 0.5s ease;
 }
@@ -346,7 +416,7 @@ html, body {
     background-color: var(--retroYellow);
     height: auto;
     min-height: 30rem;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.9);
     margin-top: 1rem;
 }
@@ -375,6 +445,7 @@ html, body {
     background-color: inherit;
     color: whitesmoke;
     text-decoration: none;
+    margin-top: 1rem;
     margin-left: 0px;
 }
 
@@ -402,6 +473,9 @@ html, body {
     font-family: "Geist Mono", monospace;
     border-bottom: var(--retroBlue) 1rem solid;
     padding-top: 3rem;
+    position: relative;
+    min-height: 40rem;
+    background-color: var(--darkmodeBlue);
 }
 
 .contactTextContainer {
@@ -418,6 +492,7 @@ html, body {
     margin-left: 5rem;
     border-left: var(--retroBlue) 0.5rem solid;
     padding-left: 0.5rem;
+    font-size: 2.5rem;
 }
 
 .contactText p {
@@ -443,6 +518,7 @@ html, body {
     margin-left: 5rem;
     border-left: var(--retroBlue) 0.5rem solid;
     padding-left: 0.5rem;
+    font-size: 2.5rem;
 }
 
 .contactFormContainer form {
@@ -505,6 +581,15 @@ html, body {
     font-size: 24px;
 }
 
+.formSend button i {
+    transition: transform 1s ease;
+}
+
+.formSend button:hover i {
+    transform: translateX(5px);
+
+}
+
 .contactContactinfo {
     margin-left: 5rem;
     margin-top: 1rem;
@@ -531,3 +616,320 @@ html, body {
     width: 50%;
 }
 
+.contactSocials p, .contactCreds p {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+
+.index_footer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    background-color: var(--darkmodeBlue);
+    min-height: 15rem;
+    font-family: "Geist Mono", monospace;
+}
+
+.footer_parts {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: top;
+    padding: 2rem;
+    width: 33%;
+}
+
+.footer_parts h2 {
+    font-family: "Geist Mono", monospace;
+    color: white;
+}
+
+.footer_parts a {
+    text-decoration: none;
+    transition: transform 0.5s ease;
+}
+
+.footer_parts a:hover {
+    text-decoration: none;
+    transform: translateX(10px);
+}
+
+.footer_parts a p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer_parts p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* pages */
+
+/* pageheader */
+
+.pageHeader {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: var(--darkmodeBlue);
+    min-height: 5rem;
+    font-family: "Geist Mono", monospace;
+}
+
+.pageh1 {
+    display: flex;
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 70%;
+}
+
+.pageh1 h1 {
+    margin-bottom: 0;
+}
+
+.pageNav {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 30%;
+}
+
+.pageNav a {
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+.pageNav a p {
+    font-size: 2rem;
+    transition: transform 1s ease;
+}
+
+.pageNav a:hover p {
+    transform: translateY(-10px);
+}
+
+/* blocks */
+
+.pageContainer {
+    width: 100%;
+    /* min-height: calc(100vh - 5rem); */
+    display: flex;
+    background-color: var(--darkmodeBlue);
+}
+
+.pageBlock {
+    width: 100%;
+    padding: 3rem;
+    margin: 1.7rem;
+    background-color: var(--retroRed);
+    color: white;
+    height: auto;
+    min-height: 10rem;
+    max-height: 15rem;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.5s ease;
+    transition: margin-top 0.5s ease;
+}
+
+.pageBlock:hover {
+    width: 100%;
+    padding: 3rem;
+    margin: 1.7rem;
+    background-color: var(--retroRed);
+    /* height: auto; */
+    /* min-height: 30rem; */
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.9);
+    margin-top: 1rem;
+}
+
+.pageBlock a {
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+    margin-left: 0px;
+    transition: margin-left 1s ease;
+}  
+
+.pageBlock a i{
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-left: 0px;
+}
+
+.pageBlock a:hover {
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-left: 1rem;
+}  
+
+.pageBlock a i:hover{
+    background-color: inherit;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.pageBlock img {
+    max-width: 25%;
+    
+}
+
+/* Projectpages */
+
+.checksinfoContainer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: var(--darkmodeBlue);
+    min-width: 100%;
+    color: white;
+    min-height: 75vh;
+    border-bottom: var(--retroRed) solid 1rem;
+    padding-bottom: 3rem;
+}
+
+.checkboxes {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 2rem;
+}
+
+.checkboxes h2 {
+    color: var(--retroRed);
+    margin-top: 2rem;
+}
+
+.checkboxes form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between items */
+}
+
+.checkboxes form label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.checkboxes form input[type="checkbox"] {
+    margin-left: 1rem; /* Adjust spacing between label and checkbox */
+    appearance: none; /* Remove default checkbox styling */
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--retroRed);
+    background-color: var(--darkmodeBlue);
+    border-radius: 0.5rem;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkboxes form input[type="checkbox"]:checked {
+    background-color: var(--retroRed);
+    border-color: var(--retroRed);
+}
+
+.checkboxes form input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+.checkboxes form input[type="checkbox"]:hover {
+    border-color: var(--retroRed);
+    background-color: var(--darkmodeBlue);
+}
+
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-right: 2rem;
+}
+
+.projectInfo h1 {
+    color: var(--retroRed);
+}
+
+.projectInfo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    transition: transform 1s ease;
+}
+
+.projectInfo a:hover {
+    transform: translateX(10px);
+}
+
+.kerntaken {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--darkmodeBlue);
+    padding: 2rem;
+}
+
+.kerntaken h1 {
+    color: var(--retroRed);
+}
+
+.kerntaakBlocks {
+    margin-bottom: 3rem;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.kerntaakBlock {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    background-color: var(--retroRed);
+    color: white;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    transition: box-shadow 0.5s ease;
+}
+
+.kerntaakBlock a {
+    text-decoration: none;
+    transition: transform 0.5s ease;
+}
+
+.kerntaakBlock a h2 {
+    color: white;
+}
+
+.kerntaakBlock a h3 {
+    color: white;
+}
+
+.kerntaakBlock a:hover {
+    transform: translateY(-5px);
+}
+
+.kerntaakBlock:hover {
+    box-shadow: 0.75rem 0.75rem rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
